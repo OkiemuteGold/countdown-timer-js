@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+:root {
+  --textColor: #6c757d;
+  --fontNunito: "Nunito", sans-serif;
+  --fontLato: "Lato", sans-serif;
+}
+
+*,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: var(--fontLato);
+
+  background: url("../img/countdown-timer.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body * {
+  z-index: 1;
+}
+
+.new_year {
+  font-size: 9.5rem;
+  opacity: 0.2;
+  letter-spacing: 0.5px;
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+h1 {
+  font-family: var(--fontNunito);
+  font-size: 5rem;
+  margin: -80px 0 40px;
+  text-transform: capitalize;
+}
+
+.countdown {
+  display: none;
+  letter-spacing: 0.025rem;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.time h2 {
+  font-size: 3.75rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.05rem;
+}
+
+.time small {
+  font-size: 1.175rem;
+}
+
+.countdown .time:nth-child(1) small {
+  color: darkturquoise;
+}
+
+.countdown .time:nth-child(2) small {
+  color: darkgoldenrod;
+}
+
+.countdown .time:nth-child(3) small {
+  color: darkgreen;
+}
+
+.countdown .time:nth-child(4) small {
+  color: darkred;
+}
+
+@media screen and (max-width: 1025px) {
+  .new_year {
+    font-size: 7.75rem;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .time h2 {
+    font-size: 3.25rem;
+  }
+
+  .time small {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .new_year {
+    font-size: 6.75rem;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  .time h2 {
+    font-size: 3.075rem;
+  }
+
+  .time small {
+    font-size: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .new_year {
+    font-size: 5rem;
+  }
+
+  h1 {
+    font-size: 3.125rem;
+  }
+
+  .time {
+    margin: 0.5rem;
+  }
+
+  .time h2 {
+    font-size: 2.25rem;
+  }
+
+  .time small {
+    font-size: 0.875rem;
+  }
+}
