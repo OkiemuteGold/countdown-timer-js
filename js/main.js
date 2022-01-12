@@ -4,6 +4,7 @@ const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 const year = document.getElementById('new_year');
 
+const title = document.getElementById('title');
 const countdown = document.getElementById('countdown');
 const loading = document.getElementById('loading');
 
@@ -29,6 +30,23 @@ function updateCountdown() {
     minutes.innerText = doubled(min);
     seconds.innerText = doubled(sec);
 
+    if (
+        days.innerText == 0 &&
+        hours.innerText == 0 &&
+        minutes.innerText == 0 &&
+        seconds.innerText == 0
+    ) {
+        reset();
+    }
+
+    function reset() {
+        clearInterval(countInterval);
+        countdown.innerText = "";
+        title.innerText = "Welcome To 2022";
+        title.style.margin = "0";
+        year.innerText = "";
+    }
+
     // add 0 if number is less than 10
     function doubled(i) {
         if (i < 10) {
@@ -46,6 +64,6 @@ setTimeout(() => {
 }, 1000);
 
 // run every second
-setInterval(() => {
+let countInterval = setInterval(() => {
     updateCountdown();
 }, 1000);
